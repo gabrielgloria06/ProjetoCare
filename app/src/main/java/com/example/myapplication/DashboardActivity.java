@@ -24,6 +24,7 @@ public class DashboardActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent("com.example.myapp.Perfil_Action");
                 startActivity(intent);
+                finish();
             }
         });
 

@@ -13,4 +13,7 @@
     <string name="login">Já possui uma conta?</string>
     <string name="data_nascimento">Data de nascimento</string>
     <string name="cadastro_button_text">Cadastrar-se</string>
+    <string name="username">Ágata Gonçalves</string>
+    <string name="useremail">saraagata09@gmail.com</string>
+    <string name="userdate">13/10/2006</string>
 </resources>

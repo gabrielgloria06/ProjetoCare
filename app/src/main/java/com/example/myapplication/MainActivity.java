@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView cadastro = findViewById(R.id.semContaText);
+        TextView textCadastro = findViewById(R.id.semContaText);
 
         TextView esqueceuText = findViewById(R.id.esqueceuText);
 
@@ -29,22 +29,32 @@ public class MainActivity extends Activity {
 
         EditText passwordInput = findViewById(R.id.passwordInput);
 
+        EditText emailInput = findViewById(R.id.emailInput);
+
         ImageView esconderButton = findViewById(R.id.btnEsconder);
 
-        cadastro.setOnClickListener(new View.OnClickListener() {
+        textCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent("com.example.myapp.Action_Cadastro");
                 startActivity(intent);
+                finish();
             }
         });
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String email = emailInput.getText().toString();
+                String senha  = passwordInput.getText().toString();
+
+
+
                 Toast.makeText(MainActivity.this,"Bem vindo ao nosso aplicativo!", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent("com.example.myapp.Dashboard_Action");
                 startActivity(intent);
+                finish();
+
             }
         });
 
@@ -54,6 +64,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent("com.example.myapp.Senha_Action");
                 startActivity(intent);
+                finish();
             }
         });
 

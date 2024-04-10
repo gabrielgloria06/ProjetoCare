@@ -47,13 +47,13 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/UserNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/libre_baskerville"
-            android:text="Gabriel Glória"
+            android:text="@string/username"
             android:textColor="@color/blue2"
             android:textStyle="normal"
             app:layout_constraintStart_toEndOf="@+id/imageView7"
@@ -214,7 +214,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/inicioButton"
         android:layout_width="67dp"
         android:layout_height="51dp"
         android:layout_marginStart="48dp"
@@ -224,7 +224,7 @@
         android:src="@drawable/component_7" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/ajusteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
