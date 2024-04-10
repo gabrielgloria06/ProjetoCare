@@ -8,8 +8,8 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="407dp"
-        android:layout_height="569dp"
+        android:layout_width="399dp"
+        android:layout_height="526dp"
 
         android:background="@drawable/shape_card_corner"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="172dp"
+        android:layout_marginTop="180dp"
         android:text="@string/email_text"
         android:textColor="@color/preto"
         android:textSize="20sp"
@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="276dp"
         android:fontFamily="@font/libre_baskerville"
         android:text="@string/data_nascimento"
         android:textColor="@color/preto"
@@ -78,16 +78,16 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="102dp"
-        android:layout_height="79dp"
+        android:layout_width="115dp"
+        android:layout_height="92dp"
         android:contentDescription="@string/alt_logo"
+        android:src="@drawable/component_12"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025"
-        android:src="@drawable/component_12" />
+        app:layout_constraintVertical_bias="0.025" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -97,20 +97,20 @@
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+      android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:fontFamily="@font/libre_baskerville"
         android:text="Ágata Gonçalves"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
@@ -161,6 +161,7 @@
         android:id="@+id/divider"
         android:layout_width="240dp"
         android:layout_height="1dp"
+        android:layout_marginEnd="112dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="8dp"
         android:background="@color/black"
@@ -172,20 +173,19 @@
         android:layout_width="240dp"
         android:layout_height="1dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginStart="40dp"
         android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <View
         android:id="@+id/divider4"
         android:layout_width="240dp"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
         android:layout_marginStart="40dp"
-        android:layout_marginEnd="112dp"
+        android:layout_marginTop="8dp"
         android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
 
@@ -239,6 +239,19 @@
         android:background="@color/blue"
 
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/botao_sair"
+        android:text="Sair da conta"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
 
