@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 
         ImageView mostrarButton = findViewById(R.id.buttonMostrar);
 
-        EditText passwordInput = findViewById(R.id.passwordInput);
+        EditText senhaInput = findViewById(R.id.passwordInput);
 
         EditText emailInput = findViewById(R.id.emailInput);
 
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View v) {
                 String email = emailInput.getText().toString();
-                String senha  = passwordInput.getText().toString();
+                String senha  = senhaInput.getText().toString();
 
 
 
@@ -74,8 +74,8 @@ public class MainActivity extends Activity {
                 mostrarButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (passwordInput.getInputType() == 129) {
-                            passwordInput.setInputType(1);
+                        if (senhaInput.getInputType() == 129) {
+                            senhaInput.setInputType(1);
                             mostrarButton.setVisibility(View.INVISIBLE);
                             esconderButton.setVisibility(View.VISIBLE); // Tornar o botão "esconder" visível
                         }
@@ -87,8 +87,8 @@ public class MainActivity extends Activity {
         esconderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 if(passwordInput.getInputType()==1){
-                     passwordInput.setInputType(129);
+                 if(senhaInput.getInputType()==1){
+                     senhaInput.setInputType(129);
                      esconderButton.setVisibility(View.INVISIBLE);
                      mostrarButton.setVisibility(View.VISIBLE);
                  }

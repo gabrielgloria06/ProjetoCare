@@ -19,21 +19,28 @@ public class CadastroActivity extends Activity {
         setContentView(R.layout.actvity_cadastro);
 
         Button button = findViewById(R.id.cadastrarButton);
+        EditText nomeInput = findViewById(R.id.UserNameInput);
+        EditText emailInput = findViewById(R.id.emailInput);
+        EditText dataInput = findViewById(R.id.DataInput);
+        ImageView mostrarButton = findViewById(R.id.buttonMostrar);
+        EditText senhaInput = findViewById(R.id.passwordInput);
+        ImageView esconderButton = findViewById(R.id.btnEsconder);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String nome = nomeInput.getText().toString();
+                String email = emailInput.getText().toString();
+                String data = dataInput.getText().toString();
+                String senha = senhaInput.getText().toString();
+
                 Intent intent = new Intent(CadastroActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
             }
         });
 
-        ImageView mostrarButton = findViewById(R.id.buttonMostrar);
 
-        EditText passwordInput = findViewById(R.id.passwordInput);
-
-        ImageView esconderButton = findViewById(R.id.btnEsconder);
 
         
         mostrarButton.setOnClickListener(new View.OnClickListener() {
@@ -42,10 +49,10 @@ public class CadastroActivity extends Activity {
                 mostrarButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (passwordInput.getInputType() == 129) {
-                            passwordInput.setInputType(1);
+                        if (senhaInput.getInputType() == 129) {
+                            senhaInput.setInputType(1);
                             mostrarButton.setVisibility(View.INVISIBLE);
-                            esconderButton.setVisibility(View.VISIBLE); // Tornar o botão "esconder" visível
+                            esconderButton.setVisibility(View.VISIBLE);
                         }
                     }
                 });
@@ -55,8 +62,8 @@ public class CadastroActivity extends Activity {
         esconderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(passwordInput.getInputType()==1){
-                    passwordInput.setInputType(129);
+                if(senhaInput.getInputType()==1){
+                    senhaInput.setInputType(129);
                     esconderButton.setVisibility(View.INVISIBLE);
                     mostrarButton.setVisibility(View.VISIBLE);
                 }
