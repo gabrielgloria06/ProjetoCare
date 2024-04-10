@@ -1,0 +1,16 @@
+<resources>
+    //textos de text views, buttons terminarão em _text
+    <string name="app_name">Care</string>
+    <string name="alt_logo">Logo</string>
+    <string name="senha_text">Senha</string>
+    <string name="consenha_text">Confirmar senha</string>
+    <string name="cadastro_text">Cadastro</string>
+    <string name="email_text">Email</string>
+    <string name="user_text">Nome completo</string>
+    <string name="login_button_text">Entrar</string>
+    <string name="login_text"> Login</string>
+    <string name="cadastro">Não possui uma conta?</string>
+    <string name="login">Já possui uma conta?</string>
+    <string name="data_nascimento">Data de nascimento</string>
+    <string name="cadastro_button_text">Cadastrar-se</string>
+</resources>
