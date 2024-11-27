@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Sombra -->
+    <item android:left="1dp" android:right="3dp" android:top="3dp" android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#60000000" /> <!-- Sombra preta com 25% de opacidade -->
+            <corners android:radius="6dp" /> <!-- Raio dos cantos da sombra -->
+        </shape>
+    </item>
+
+    <!-- Botão com borda e cor de fundo -->
+    <item android:top="0dp" android:bottom="4dp" android:left="2dp" android:right="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!-- Cor de fundo com 71% de opacidade -->
+            <stroke
+                android:width="1.5dp"
+                android:color="#B50E3754" /> <!-- Cor da borda com 71% de opacidade -->
+            <corners android:radius="8dp" /> <!-- Arredondamento dos cantos do botão -->
+        </shape>
+    </item>
+</layer-list>

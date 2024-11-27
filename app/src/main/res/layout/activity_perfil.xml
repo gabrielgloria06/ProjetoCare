@@ -8,13 +8,13 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="399dp"
-        android:layout_height="526dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
 
         android:background="@drawable/shape_card_corner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -107,12 +107,11 @@
         android:layout_height="92dp"
         android:contentDescription="@string/alt_logo"
         android:src="@drawable/component_12"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/UserNameText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintVertical_bias="0.719" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -128,16 +127,15 @@
         android:id="@+id/UserNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/libre_baskerville"
         android:text="@string/username"
         android:textColor="@color/white"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/UserNameText2"
@@ -190,69 +188,18 @@
         app:layout_constraintTop_toBottomOf="@+id/userEmailText" />
 
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="393dp"
-        android:layout_height="68dp"
-        android:background="@drawable/border_shape_blue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/inicioButton"
-        android:layout_width="67dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:src="@drawable/component_7" />
-
-    <ImageView
-        android:id="@+id/ajusteButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/component_8"
-        app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view3"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/buttonPerfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/component_9"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <View
-        android:id="@+id/divider3"
-        android:layout_width="40dp"
-        android:layout_height="2dp"
-        android:layout_marginStart="292dp"
-        android:layout_marginBottom="8dp"
-        android:background="@color/blue"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <Button
         android:id="@+id/buttonSair"
-        android:layout_width="149dp"
-        android:layout_height="38dp"
-        android:layout_marginBottom="40dp"
+        android:layout_width="186dp"
+        android:layout_height="44dp"
+        android:layout_marginBottom="108dp"
         android:background="@drawable/botao_sair"
         android:text="Sair da conta"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
 

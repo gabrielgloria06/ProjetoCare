@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <Button
+        android:id="@+id/voltar"
+        android:layout_width="145dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/botao_redondo"
+        android:text="voltar"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="394dp"
+        android:layout_height="464dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="172dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tituloArt">
+
+        <TextView
+            android:id="@+id/conteudoArt"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="@font/inter"
+            android:justificationMode="inter_word"
+            android:lineSpacingExtra="5sp"
+            android:minLines="3"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="15dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:text="@sample/artigos.json/Artigos/conteudo" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tituloArt"
+        android:layout_width="337dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/inter"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="27sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@sample/artigos.json/Artigos/titulo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

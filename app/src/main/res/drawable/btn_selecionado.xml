@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#80FFFFFF"/> <!-- Cor opaca quando pressionado -->
+            <corners android:radius="8dp"/> <!-- Ajuste o raio do canto se necessário -->
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF"/> <!-- Cor normal -->
+            <corners android:radius="8dp"/> <!-- Ajuste o raio do canto se necessário -->
+        </shape>
+    </item>
+</selector>

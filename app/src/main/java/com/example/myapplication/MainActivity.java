@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
         String savedToken = AppSharedPreferences.getInstance(getApplicationContext()).getToken();
         if (savedToken != null && !savedToken.isEmpty()) {
             // Passar o token para a próxima atividade (DashboardActivity)
-            Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
+            Intent intent = new Intent(MainActivity.this, MainFragment.class);
             intent.putExtra("token", savedToken);
             startActivity(intent);
             finish();
@@ -97,7 +97,7 @@ public class MainActivity extends Activity {
                                 // Verificar se o token não está vazio ou nulo
                                 if (token != null && !token.isEmpty()) {
                                     AppSharedPreferences.getInstance(getApplicationContext()).saveToken(token);
-                                    Intent intent1 = new Intent(MainActivity.this, DashboardActivity.class);
+                                    Intent intent1 = new Intent(MainActivity.this, MainFragment.class);
                                     intent1.putExtra("token", token);
                                     startActivity(intent1);
                                     finish();

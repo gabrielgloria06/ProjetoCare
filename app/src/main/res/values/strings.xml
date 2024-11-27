@@ -1,5 +1,4 @@
 <resources>
-    //textos de text views, buttons terminarão em _text
     <string name="app_name">Care</string>
     <string name="alt_logo">Logo</string>
     <string name="senha_text">Senha</string>
@@ -16,4 +15,16 @@
     <string name="username">Ágata Gonçalves</string>
     <string name="useremail">saraagata09@gmail.com</string>
     <string name="userdate">13/10/2006</string>
+    <string-array name="tipos_locais">
+    <item>Hospital</item>
+    <item>Clínica</item>
+    <item>Centro Médico</item>
+    </string-array>
+    <string-array name="niveis_af">
+        <item>Sedentário</item>
+        <item>Leve</item>
+        <item>Moderada</item>
+        <item>Alta</item>
+        <item>Muito alta</item>
+    </string-array>
 </resources>

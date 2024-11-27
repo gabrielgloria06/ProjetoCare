@@ -7,20 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.myapplication.api.RetrofitClient;
-import com.example.myapplication.models.user.CadastroUser;
 import com.example.myapplication.services.user.CadastroUserService;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class CadastroActivity extends Activity {
 
@@ -29,78 +21,59 @@ public class CadastroActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.actvity_cadastro);
 
-        Button button = findViewById(R.id.cadastrarButton);
+        Button button = findViewById(R.id.continuarBtn);
         EditText nomeInput = findViewById(R.id.UserNameInput);
         EditText emailInput = findViewById(R.id.emailInput);
         EditText dataInput = findViewById(R.id.etdata);
-        ImageView mostrarButton = findViewById(R.id.buttonMostrar);
         EditText senhaInput = findViewById(R.id.passwordInput);
+        ImageView mostrarButton = findViewById(R.id.buttonMostrar);
         ImageView esconderButton = findViewById(R.id.btnEsconder);
-        CadastroUserService cadastroUserService = RetrofitClient.getClient().create(CadastroUserService.class);
-        Intent intent = new Intent(CadastroActivity.this,MainActivity.class);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String nome = nomeInput.getText().toString();
-                String email = emailInput.getText().toString();
-                String data = dataInput.getText().toString();
-                String senha = senhaInput.getText().toString();
-                CadastroUser cadastroUser = new CadastroUser(nome,senha,email,data);
-                Call<CadastroUser> call = cadastroUserService.createCadastro(cadastroUser);
-                call.enqueue(new Callback<CadastroUser>() {
-                    @Override
-                    public void onResponse(@NonNull Call<CadastroUser> call, @NonNull Response<CadastroUser> response) {
-                        if (response.isSuccessful()) {
-                            Toast.makeText(CadastroActivity.this, "Cadastro criado com sucesso!", Toast.LENGTH_SHORT).show();
-                            startActivity(intent);
-                        } else {
-                            Toast.makeText(CadastroActivity.this, "Erro ao criar cadastro, tente novamente!", Toast.LENGTH_SHORT).show();
-                            startActivity(intent);
-                        }
-                    }
+        button.setOnClickListener(v -> {
+            String nome = nomeInput.getText().toString().trim();
+            String email = emailInput.getText().toString().trim();
+            String data = dataInput.getText().toString().trim();
+            String senha = senhaInput.getText().toString().trim();
 
-                    @Override
-                    public void onFailure(@NonNull Call<CadastroUser> call, @NonNull Throwable t) {
-                        Toast.makeText(CadastroActivity.this, "Falha ao criar cadastro: " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                        startActivity(intent);
-                     }
-                });
+            if (nome.isEmpty() || email.isEmpty() || data.isEmpty() || senha.isEmpty()) {
+                Toast.makeText(this, "Por favor, preencha todos os campos.", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
+            if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                Toast.makeText(this, "Digite um e-mail válido.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            Intent it = new Intent(CadastroActivity.this, Cadastro2Activity.class);
+            it.putExtra("nome", nome);
+            it.putExtra("email", email);
+            it.putExtra("senha", senha);
+            it.putExtra("data", data);
+            startActivity(it);
+        });
+
+        mostrarButton.setOnClickListener(v -> {
+            if (senhaInput.getInputType() == 129) {
+                senhaInput.setInputType(1);
+                mostrarButton.setVisibility(View.INVISIBLE);
+                esconderButton.setVisibility(View.VISIBLE);
             }
         });
 
-
-
-
-        mostrarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mostrarButton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (senhaInput.getInputType() == 129) {
-                            senhaInput.setInputType(1);
-                            mostrarButton.setVisibility(View.INVISIBLE);
-                            esconderButton.setVisibility(View.VISIBLE);
-                        }
-                    }
-                });
+        esconderButton.setOnClickListener(v -> {
+            if (senhaInput.getInputType() == 1) {
+                senhaInput.setInputType(129);
+                esconderButton.setVisibility(View.INVISIBLE);
+                mostrarButton.setVisibility(View.VISIBLE);
             }
         });
-
-        esconderButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(senhaInput.getInputType()==1){
-                    senhaInput.setInputType(129);
-                    esconderButton.setVisibility(View.INVISIBLE);
-                    mostrarButton.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-
-
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();  // Isso faz com que a Activity anterior seja chamada ao pressionar o botão de voltar
+    }
+
 }
+

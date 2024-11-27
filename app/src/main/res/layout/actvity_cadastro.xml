@@ -81,11 +81,11 @@
         app:layout_constraintVertical_bias="0.734" />
 
     <Button
-        android:id="@+id/cadastrarButton"
+        android:id="@+id/continuarBtn"
         android:layout_width="160dp"
         android:layout_height="50dp"
         android:background="@drawable/botao_redondo"
-        android:text="@string/cadastro_button_text"
+        android:text="CONTINUAR"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

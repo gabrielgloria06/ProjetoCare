@@ -1,0 +1,23 @@
+{
+  "niveis":[
+
+    {
+      "nivel": "Sedentário"
+    },
+    {
+      "nivel": "Leve"
+    },
+    {
+      "nivel": "Moderado"
+    },
+    {
+      "nivel": "Alto"
+    },
+    {
+      "nivel": "Muito alto"
+    }
+  ]
+
+}
+
+
