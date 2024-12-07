@@ -117,7 +117,7 @@
                     android:layout_marginStart="8dp"
                     android:ems="10"
                     android:inputType="time"
-                    app:layout_constraintBottom_toTopOf="@+id/tvlugar"
+                    app:layout_constraintBottom_toTopOf="@+id/tv2lugar"
                     app:layout_constraintStart_toEndOf="@+id/textView23"
                     app:layout_constraintTop_toBottomOf="@+id/tvdia" />
 
@@ -127,7 +127,7 @@
                     android:layout_height="39dp"
                     android:layout_marginStart="11dp"
                     android:ems="10"
-                    android:inputType="date"
+                    android:inputType="text"
                     android:textColor="#000000"
                     app:layout_constraintBottom_toTopOf="@+id/tvhora"
                     app:layout_constraintStart_toEndOf="@+id/textView22"
@@ -146,7 +146,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/tvlugar"
+                    android:id="@+id/tv2lugar"
                     android:layout_width="262dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"

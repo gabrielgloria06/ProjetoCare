@@ -8,15 +8,18 @@
     android:padding="8dp">
 
     <FrameLayout
-        android:layout_width="387dp"
-        android:layout_height="305dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="390dp"
+            android:layout_height="347dp"
+            android:layout_marginBottom="20dp"
+            >
 
             <Button
                 android:id="@+id/saibabtn"
@@ -32,10 +35,10 @@
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.099"
+                app:layout_constraintHorizontal_bias="0.082"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.6" />
 
             <TextView
                 android:id="@+id/titulo"
@@ -45,7 +48,7 @@
                 android:fontFamily="@font/inter"
                 android:textAlignment="center"
                 android:textColor="#B7000000"
-                android:textSize="26sp"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.258"
                 app:layout_constraintStart_toStartOf="parent"
@@ -54,9 +57,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView"
-                android:layout_width="353dp"
-                android:layout_height="147dp"
+                android:layout_width="347dp"
+                android:layout_height="210dp"
                 android:layout_marginTop="13dp"
+                android:layout_marginEnd="10dp"
                 android:background="@android:color/transparent"
                 app:cardCornerRadius="15dp"
                 app:cardElevation="10dp"
@@ -67,7 +71,7 @@
                 app:layout_constraintVertical_bias="0.087">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     tools:layout_editor_absoluteX="16dp"
                     tools:layout_editor_absoluteY="68dp">
@@ -79,10 +83,10 @@
                         android:scaleType="centerCrop"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.041"
+                        app:layout_constraintHorizontal_bias="0.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.433"
+                        app:layout_constraintVertical_bias="0.0"
                         tools:src="@sample/artigos.json/Artigos/imagem" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

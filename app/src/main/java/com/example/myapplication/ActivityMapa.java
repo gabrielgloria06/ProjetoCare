@@ -11,11 +11,8 @@ import androidx.fragment.app.Fragment;
 
 import android.content.pm.PackageManager;
 
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.location.Address;
-import android.location.Geocoder;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,12 +20,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -50,7 +44,7 @@ import com.google.android.libraries.places.api.net.FetchPlaceRequest;
 import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest;
 import com.google.android.libraries.places.api.net.PlacesClient;
 
-public class MapaActivity extends Fragment implements OnMapReadyCallback {
+public class ActivityMapa extends Fragment implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private AlertDialog alerta;
@@ -185,7 +179,7 @@ public class MapaActivity extends Fragment implements OnMapReadyCallback {
 
     private void buscarHospitaisProximos(GoogleMap googleMap, String filtro) {
         if (!Places.isInitialized()) {
-            Places.initialize(getContext(), "AIzaSyDwhqSkjcDFefL739dZuss1fG7Vt6BstmM");
+            Places.initialize(getContext(), "AIzaSyBVnFt4Ao4NfzoyxYTjSCZe4DO4ujZbaR4");
         }
         PlacesClient placesClient = Places.createClient(getContext());
 

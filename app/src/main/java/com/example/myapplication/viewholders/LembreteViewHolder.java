@@ -20,7 +20,7 @@ public class LembreteViewHolder extends RecyclerView.ViewHolder {
         nome = itemView.findViewById(R.id.tvnome);
         dia = itemView.findViewById(R.id.tvdia);
         hora = itemView.findViewById(R.id.tvhora);
-        local = itemView.findViewById(R.id.tvlugar);
+        local = itemView.findViewById(R.id.tv2lugar);
         conflembrete = itemView.findViewById(R.id.btnMarcado);
     }
 }

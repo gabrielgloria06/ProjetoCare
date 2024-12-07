@@ -1,16 +1,12 @@
 package com.example.myapplication;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.myapplication.adapters.ArtigosAdapter;
@@ -29,68 +25,84 @@ public class ArtigosActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artigo);
 
+        // Inicializa os artigos
         artigoModels.addAll(inicializarArtigos());
 
+        // Configura o adapter e a ListView
         adapter = new ArtigosAdapter(artigoModels, this);
-
         ListView lista = findViewById(R.id.listaarts);
         lista.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
+        // Configura o botão para voltar à MainFragment
         ImageView img = findViewById(R.id.voltar);
-
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               Intent it = new Intent(ArtigosActivity.this,MainFragment.class);
-               startActivity(it);
+                Intent it = new Intent(ArtigosActivity.this, MainFragment.class);
+                startActivity(it);
             }
         });
-
     }
 
     private List<ArtigoModel> inicializarArtigos() {
         List<ArtigoModel> artigoModels2 = new ArrayList<>();
 
-        // Adicionando os artigos manualmente
+        // Adiciona os artigos manualmente
         artigoModels2.add(new ArtigoModel(
                 1,
-                "Os Benefícios da Água",
-                R.drawable.agua,
-                "A água é essencial para a vida e é uma das substâncias mais importantes para o funcionamento adequado do corpo humano. Ela desempenha vários papéis críticos, incluindo a regulação da temperatura corporal, a eliminação de toxinas e a lubrificação das articulações. Além disso, a água é fundamental para a digestão e absorção de nutrientes, ajudando o corpo a utilizar as vitaminas e minerais dos alimentos que consumimos. A desidratação pode levar a problemas graves, como pedras nos rins, infecções urinárias, e até problemas cardiovasculares. Portanto, é essencial beber água regularmente ao longo do dia, especialmente durante atividades físicas e em climas quentes. Especialistas recomendam o consumo de pelo menos 2 litros de água por dia para manter o corpo funcionando corretamente.\"",
-                "Dr. João Silva",
-                "2023-08-20"
+                "Os Riscos da Obesidade",
+                R.drawable.obesidade,
+                "A obesidade é uma condição crônica que afeta milhões de pessoas em todo o mundo e está associada a uma série de complicações graves para a saúde. Entre elas estão doenças cardiovasculares, diabetes tipo 2, apneia do sono e certos tipos de câncer. O excesso de peso também pode impactar a saúde mental, levando a problemas como baixa autoestima e depressão. Combater a obesidade requer uma abordagem multifacetada, que inclui uma dieta equilibrada, exercícios regulares, suporte psicológico e, em alguns casos, intervenções médicas. Estratégias como evitar alimentos ultraprocessados, consumir porções adequadas e manter uma rotina de exercícios podem ajudar a reduzir o peso e melhorar a saúde geral.",
+                "Dr. Rafael Lima",
+                "2023-11-25"
         ));
 
         artigoModels2.add(new ArtigoModel(
                 2,
-                "Importância de Exercícios Físicos",
-                R.drawable.cara, // Use o recurso drawable correto
-                "A prática regular de exercícios físicos traz uma série de benefícios para a saúde. Estudos mostram que a atividade física ajuda a controlar o peso corporal, melhora a saúde cardiovascular, e aumenta a força muscular e a flexibilidade. Além disso, o exercício regular está associado a uma redução do risco de doenças crônicas, como diabetes tipo 2, hipertensão e certos tipos de câncer. A atividade física também tem efeitos positivos na saúde mental, ajudando a reduzir sintomas de depressão e ansiedade. Ela promove a liberação de endorfinas, que são neurotransmissores que causam a sensação de bem-estar. Para obter os benefícios, recomenda-se pelo menos 150 minutos de atividade moderada ou 75 minutos de atividade intensa por semana, combinando exercícios aeróbicos com treinamento de força.",
-                "Prof. Maria Oliveira",
-                "2023-07-15"
+                "Impacto da Ansiedade na Saúde",
+                R.drawable.ansiedade,
+                "A ansiedade, em níveis moderados, é uma reação natural ao estresse, mas quando se torna excessiva, pode afetar significativamente a saúde física e mental. Pessoas que sofrem de transtornos de ansiedade frequentemente relatam dificuldades de concentração, insônia, e aumento do risco de doenças cardíacas. Técnicas de relaxamento, como meditação, yoga e exercícios de respiração, podem ajudar a gerenciar os sintomas. A terapia cognitivo-comportamental (TCC) e, em casos específicos, medicamentos prescritos por um profissional de saúde, também podem ser eficazes no tratamento da ansiedade.",
+                "Psicóloga Marina Santos",
+                "2023-11-10"
         ));
 
         artigoModels2.add(new ArtigoModel(
                 3,
-                "Alimentação Saudável",
-                R.drawable.salada_resized, // Use o recurso drawable correto
-                "Uma alimentação saudável é a base para o bom funcionamento do organismo e a prevenção de diversas doenças. Uma dieta balanceada deve incluir uma variedade de alimentos, como frutas, vegetais, grãos integrais, proteínas magras e gorduras saudáveis. Esses alimentos fornecem os nutrientes necessários para a produção de energia, crescimento e reparo dos tecidos corporais, e a manutenção da saúde mental. Além disso, uma alimentação rica em fibras, vitaminas e minerais está associada a uma menor incidência de doenças crônicas, como doenças cardíacas, diabetes e obesidade. Reduzir o consumo de açúcar, sal e gorduras saturadas também é importante para manter uma dieta equilibrada. Comer conscientemente, prestando atenção às porções e evitando o consumo excessivo de alimentos processados, é fundamental para uma alimentação saudável.",
-                "Nutricionista Ana Costa",
-                "2023-06-10"
+                "Dietas Low Carb: O Que Você Precisa Saber",
+                R.drawable.dieta_lowcarb,
+                "As dietas low carb ganharam popularidade como uma forma eficaz de perder peso e melhorar a saúde metabólica. Elas envolvem a redução significativa do consumo de carboidratos, enquanto aumentam a ingestão de proteínas e gorduras saudáveis. Estudos mostram que essas dietas podem ajudar a reduzir os níveis de açúcar no sangue, melhorar a sensibilidade à insulina e promover a perda de peso. No entanto, é importante equilibrar a dieta para evitar deficiências nutricionais e priorizar alimentos como vegetais, carnes magras, ovos e gorduras boas, como abacate e azeite de oliva.",
+                "Nutricionista Clara Fernandes",
+                "2023-10-15"
         ));
 
         artigoModels2.add(new ArtigoModel(
                 4,
-                "A Importância do Sono",
-                R.drawable.cama, // Use o recurso drawable correto
-                "O sono desempenha um papel vital na manutenção da saúde física e mental. Durante o sono, o corpo realiza uma série de funções essenciais, como a reparação de tecidos, o fortalecimento do sistema imunológico, e a consolidação da memória e aprendizado. A falta de sono de qualidade pode levar a problemas de saúde a longo prazo, como obesidade, doenças cardíacas, diabetes e depressão. Além disso, a privação de sono afeta a cognição, o humor e a produtividade, aumentando o risco de acidentes e erros. Para garantir um sono reparador, é importante manter uma rotina regular de sono, criar um ambiente propício ao descanso, e evitar o uso de dispositivos eletrônicos antes de dormir. A maioria dos adultos precisa de 7 a 9 horas de sono por noite para funcionar de forma otimizada.",
-                "Dr. Carlos Almeida",
-                "2023-05-01"
+                "Como Melhorar a Qualidade do Sono",
+                R.drawable.qualidade_sono,
+                "A qualidade do sono é tão importante quanto a quantidade de horas dormidas. Uma boa noite de sono melhora a memória, aumenta a produtividade e ajuda a manter o equilíbrio hormonal. Para dormir melhor, recomenda-se estabelecer horários consistentes para deitar e acordar, criar um ambiente escuro e silencioso, e evitar a ingestão de cafeína nas horas que antecedem o sono. Estudos também indicam que a prática regular de exercícios e a exposição à luz natural durante o dia podem melhorar o ciclo do sono.",
+                "Dr. João Almeida",
+                "2023-09-30"
+        ));
+
+        artigoModels2.add(new ArtigoModel(
+                5,
+                "A Importância das Vacinas na Saúde Pública",
+                R.drawable.vacinas,
+                "As vacinas desempenham um papel crucial na prevenção de doenças infecciosas e na proteção da saúde pública. Elas ajudam a reduzir a disseminação de doenças como sarampo, poliomielite e gripe, protegendo tanto os indivíduos vacinados quanto as comunidades ao seu redor por meio da imunidade coletiva. Com a evolução da tecnologia, novas vacinas estão sendo desenvolvidas para combater doenças emergentes e melhorar a eficácia das já existentes. Manter o calendário de vacinação em dia é essencial para proteger não apenas a si mesmo, mas também grupos vulneráveis, como idosos e pessoas com sistemas imunológicos enfraquecidos.",
+                "Dr. Pedro Carvalho",
+                "2023-12-05"
+        ));
+
+        artigoModels2.add(new ArtigoModel(
+                6,
+                "O Papel da Saúde Mental na Produtividade",
+                R.drawable.saude_mental,
+                "A saúde mental tem um impacto direto na produtividade e no bem-estar geral. Estresse, ansiedade e burnout são problemas comuns no ambiente de trabalho moderno e podem afetar a capacidade de concentração, tomada de decisões e relações interpessoais. Empresas que promovem um ambiente de trabalho saudável, com políticas de apoio psicológico e equilíbrio entre vida pessoal e profissional, têm equipes mais engajadas e produtivas. Cuidar da saúde mental envolve reconhecer sinais de esgotamento, praticar atividades que promovam relaxamento, e buscar apoio profissional quando necessário.",
+                "Psicóloga Renata Martins",
+                "2023-12-01"
         ));
 
         return artigoModels2;
     }
-
-
 }

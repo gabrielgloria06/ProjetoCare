@@ -9,8 +9,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.App;
 import com.example.myapplication.R;
 import com.example.myapplication.models.LembreteModel;
+import com.example.myapplication.utils.AppSharedPreferences;
 import com.example.myapplication.viewholders.LembreteViewHolder;
 
 import java.util.List;
@@ -18,9 +20,17 @@ import java.util.List;
 public class LembretesAdapter extends RecyclerView.Adapter<LembreteViewHolder> {
 
     List<LembreteModel> lembretes;
+    private OnLembreteRemovidoListener listener;
 
-    public LembretesAdapter(List<LembreteModel> lembretes) {
+    public interface OnLembreteRemovidoListener {
+        void onLembreteRemovido(LembreteModel lembrete);
+    }
+
+
+
+    public LembretesAdapter(List<LembreteModel> lembretes, OnLembreteRemovidoListener listener) {
         this.lembretes = lembretes;
+        this.listener = listener;
     }
 
     @NonNull
@@ -35,21 +45,25 @@ public class LembretesAdapter extends RecyclerView.Adapter<LembreteViewHolder> {
     public void onBindViewHolder(@NonNull LembreteViewHolder holder, int position) {
         LembreteModel lembrete = lembretes.get(position);
 
-        // Preencher os dados
         holder.nome.setText(lembrete.getNome());
         holder.dia.setText(lembrete.getDia());
         holder.hora.setText(lembrete.getHora());
+        holder.local.setText(lembrete.getLocal());
         holder.conflembrete.setChecked(lembrete.isFeito());
 
-        // Atualizar a opacidade do CardView com base no estado inicial
         updateCardOpacity(holder.itemView, lembrete.isFeito());
 
-        // Listener para mudanças no estado do CheckBox
         holder.conflembrete.setOnCheckedChangeListener((buttonView, isChecked) -> {
             lembrete.setFeito(isChecked);
-            updateCardOpacity(holder.itemView, isChecked); // Atualizar a opacidade
+            updateCardOpacity(holder.itemView, isChecked);
+
+            if (isChecked) {
+                listener.onLembreteRemovido(lembrete);
+                notifyItemChanged(position); // Notifica a atualização apenas do item
+            }
         });
     }
+
 
 
     @Override
@@ -64,6 +78,10 @@ public class LembretesAdapter extends RecyclerView.Adapter<LembreteViewHolder> {
         notifyDataSetChanged();
 
     }
+
+
+
+
 
     private void updateCardOpacity(View itemView, boolean isChecked) {
         if (isChecked) {

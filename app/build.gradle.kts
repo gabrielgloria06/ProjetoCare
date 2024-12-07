@@ -46,7 +46,9 @@
         implementation("io.jsonwebtoken:jjwt-api:0.11.2")
         implementation("androidx.core:core:1.13.1")
         implementation ("org.json:json:20210307")
-        implementation("io.jsonwebtoken:jjwt-impl:0.11.2")
+            implementation ("androidx.work:work-runtime:2.8.1")
+
+            implementation("io.jsonwebtoken:jjwt-impl:0.11.2")
         implementation("io.jsonwebtoken:jjwt-jackson:0.11.2")
         implementation("com.squareup.okhttp3:okhttp:4.9.3")
         implementation ("com.fasterxml.jackson.core:jackson-core:2.15.0")

@@ -42,7 +42,7 @@ public class MainFragment extends AppCompatActivity {
            } else if (item.getItemId() == R.id.perfil) {
                selectedFragment = new PerfilFragment();
            } else if (item.getItemId() == R.id.buscar) {
-               selectedFragment = new MapaActivity();
+               selectedFragment = new ActivityMapa();
            }else if (item.getItemId() == R.id.lembrete) {
                selectedFragment = new LembretesFragment();
            }

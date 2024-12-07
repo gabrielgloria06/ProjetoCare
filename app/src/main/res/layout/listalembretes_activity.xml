@@ -5,11 +5,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="392dp"
+        android:layout_height="646dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
+        app:layout_constraintVertical_bias="0.47">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            android:layout_width="386dp"
+            android:layout_height="589dp"
+            android:layout_marginTop="20sp"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.567"
+            tools:listitem="@layout/recycleitem" />
+
+        <TextView
+            android:id="@+id/tvNao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/inter_medium"
+            android:text="Não há lembretes agendados..."
+            android:textColor="#000000"
+            android:textSize="23sp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/recyclerview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <FrameLayout
         android:id="@+id/frameLayout3"
         android:layout_width="match_parent"
         android:layout_height="88dp"
-        android:layout_marginBottom="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -51,50 +88,9 @@
                 android:src="@drawable/note_and_pen_svgrepo_com__1_"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/textView5"
-                app:layout_constraintHorizontal_bias="0.933"
-                app:layout_constraintStart_toEndOf="@+id/voltar"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.619" />
 
-            <ImageView
-                android:id="@+id/voltar"
-                android:layout_width="63dp"
-                android:layout_height="57dp"
-                android:layout_marginStart="4dp"
-                android:src="?attr/actionModeCloseDrawable"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/divider3"
-                app:layout_constraintHorizontal_bias="0.169"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.709" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="409dp"
-        android:layout_height="641dp"
-        android:layout_marginTop="1dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerview"
-                android:layout_width="403dp"
-                android:padding="20dp"
-                android:layout_height="600dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.487"
-                tools:listitem="@layout/recycleitem" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </FrameLayout>
 

@@ -4,6 +4,12 @@
         <domain includeSubdomains="true">  192.168.100.5</domain>
         <domain includeSubdomains="true">   10.100.86.124</domain>
         <domain includeSubdomains="true">  192.168.181.34</domain>
+        <domain includeSubdomains="true"> 10.100.51.114</domain>
+        <domain includeSubdomains="true"> 10.100.85.184</domain>
+        <domain includeSubdomains="true">10.100.84.87</domain>
+
+
+
 
     </domain-config>
 </network-security-config>

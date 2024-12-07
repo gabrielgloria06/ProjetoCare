@@ -30,51 +30,15 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="125dp"
-                android:layout_height="124dp"
-                android:layout_marginBottom="28dp"
-                android:background="@drawable/redondo_verde"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <ImageView
-                    android:id="@+id/imageView10"
-                    android:layout_width="68dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="24dp"
-                    android:src="@drawable/exercicios"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.543"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="Exercícios"
-                    android:textColor="#282323"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.596"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView10"
-                    app:layout_constraintVertical_bias="0.2" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout2"
 
                 android:layout_width="125dp"
                 android:layout_height="124dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="48dp"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="52dp"
                 android:background="@drawable/redondo_verde"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+                app:layout_constraintTop_toBottomOf="@+id/autocuidado">
 
                 <ImageView
                     android:id="@+id/imageView8"
@@ -91,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="4dp"
-                    android:text="Dieta"
+                    android:text="Dados"
                     android:textColor="#282323"
                     android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -102,13 +66,14 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/sonobtn"
                 android:layout_width="125dp"
                 android:layout_height="124dp"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="52dp"
                 android:background="@drawable/redondo_verde"
                 app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
-                app:layout_constraintHorizontal_bias="0.224"
+                app:layout_constraintHorizontal_bias="0.215"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnCuriosidades">
 
@@ -139,7 +104,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
+                android:id="@+id/autocuidado"
                 android:layout_width="125dp"
                 android:layout_height="122dp"
                 android:layout_marginTop="28dp"
@@ -180,11 +145,11 @@
 
                 android:layout_width="125dp"
                 android:layout_height="124dp"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="52dp"
                 android:layout_marginTop="28dp"
                 android:background="@drawable/redondo_verde"
-                app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
-                app:layout_constraintHorizontal_bias="0.311"
+                app:layout_constraintEnd_toStartOf="@+id/autocuidado"
+                app:layout_constraintHorizontal_bias="0.076"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
