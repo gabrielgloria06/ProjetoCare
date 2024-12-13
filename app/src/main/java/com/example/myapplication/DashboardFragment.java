@@ -78,6 +78,22 @@ public class DashboardFragment extends Fragment {
             }
         });
 
+        binding.bemestar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(requireContext(), DadosActivity.class);
+                startActivity(it);
+            }
+        });
+
+        binding.btnEx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(requireContext(), ExerciciosActivity.class);
+                startActivity(it);
+            }
+        });
+
         return view;
     }
 

@@ -102,6 +102,25 @@
         <activity android:name=".SonoActivity" android:exported="true">
 
         </activity>
+
+        <activity android:name=".MeditacaoActivity" android:exported="true">
+
+        </activity>
+
+        <activity android:name=".CPActivity" android:exported="true"/>
+
+        <activity android:name=".DadosActivity" android:exported="true"/>
+
+        <activity android:name=".DiagnosticoActivity" android:exported="true"/>
+
+        <activity android:name=".ExerciciosActivity" android:exported="true"/>
+
+        <activity android:name=".AgachamentoActivity" android:exported="true"/>
+        <activity android:name=".FlexaoActivity" android:exported="true"/>
+        <activity android:name=".PolichineloActivity" android:exported="true"/>
+
+
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

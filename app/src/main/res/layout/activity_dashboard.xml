@@ -30,11 +30,49 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout2"
+                android:id="@+id/btnEx"
 
                 android:layout_width="125dp"
                 android:layout_height="124dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/redondo_verde"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView095"
+                    android:layout_width="68dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.491"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/exercicios" />
+
+                <TextView
+                    android:layout_width="95dp"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Exercícios"
+                    android:textAlignment="center"
+                    android:textColor="#282323"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView095"
+                    app:layout_constraintVertical_bias="0.142" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bemestar"
+
+                android:layout_width="125dp"
+                android:layout_height="124dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="52dp"
                 android:background="@drawable/redondo_verde"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -42,27 +80,15 @@
 
                 <ImageView
                     android:id="@+id/imageView8"
-                    android:layout_width="55dp"
-                    android:layout_height="56dp"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/dieta"
+                    android:layout_width="111dp"
+                    android:layout_height="98dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/bemestar"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.925"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/textView11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="4dp"
-                    android:text="Dados"
-                    android:textColor="#282323"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView8"
-                    app:layout_constraintVertical_bias="0.272" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -70,10 +96,10 @@
                 android:layout_width="125dp"
                 android:layout_height="124dp"
                 android:layout_marginStart="44dp"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/redondo_verde"
-                app:layout_constraintEnd_toStartOf="@+id/constraintLayout2"
-                app:layout_constraintHorizontal_bias="0.215"
+                app:layout_constraintEnd_toStartOf="@+id/bemestar"
+                app:layout_constraintHorizontal_bias="0.234"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnCuriosidades">
 

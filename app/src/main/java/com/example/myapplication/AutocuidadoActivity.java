@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,7 +10,6 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -18,17 +18,15 @@ import com.example.myapplication.adapters.MetaAdapter;
 import com.example.myapplication.models.Meta;
 import com.example.myapplication.models.MetaViewModel;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class AutocuidadoActivity extends AppCompatActivity {
 
-    public MetaViewModel metaViewModel;
+    private MetaViewModel metaViewModel;
     private EditText edtMeta;
-    private Button enviarBtn, limparBtn;
-    private RecyclerView recyclerView;
-    private MetaAdapter metaAdapter;
+
     private ConstraintLayout meditacao, cp;
+    private MetaAdapter metaAdapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,52 +34,52 @@ public class AutocuidadoActivity extends AppCompatActivity {
         setContentView(R.layout.autocuidado_activity);
 
         metaViewModel = new ViewModelProvider(this).get(MetaViewModel.class);
+
         edtMeta = findViewById(R.id.edtMeta);
-        enviarBtn = findViewById(R.id.enviarBtn);
-        recyclerView = findViewById(R.id.recycle2);
+        Button enviarBtn = findViewById(R.id.enviarBtn);
+        Button limparBtn = findViewById(R.id.limparBtn);
+        RecyclerView recyclerView = findViewById(R.id.recycle2);
+        ImageView btnVoltar = findViewById(R.id.voltar);
         meditacao = findViewById(R.id.meditacao);
         cp = findViewById(R.id.cuidadopessoal);
-        limparBtn = findViewById(R.id.limparBtn);
-        ImageView btnVoltar = findViewById(R.id.voltar);
 
-        metaAdapter = new MetaAdapter(new ArrayList<>(), (meta, isConcluded) -> {
-            metaViewModel.updateMetaStatus(meta, isConcluded); // Atualiza o status da meta
-        });
+        metaAdapter = new MetaAdapter((meta, isConcluded) -> metaViewModel.updateMetaStatus(meta, isConcluded));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(metaAdapter);
 
-        // Observar mudanças nas metas
-        metaViewModel.getMetas().observe(this, new Observer<List<Meta>>() {
-            @Override
-            public void onChanged(List<Meta> metas) {
-                metaAdapter.updateMetas(metas); // Atualizar RecyclerView
+        // Observa mudanças nas metas
+        metaViewModel.getMetas().observe(this, metas -> metaAdapter.setMetas(metas));
 
+        // Botão para adicionar metas
+        enviarBtn.setOnClickListener(v -> {
+            String textoMeta = edtMeta.getText().toString().trim();
+            if (!textoMeta.isEmpty()) {
+                Meta novaMeta = new Meta(textoMeta);
+                metaViewModel.addMeta(novaMeta);
+                edtMeta.setText("");
             }
         });
 
-        enviarBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String texto = edtMeta.getText().toString();
-                Meta meta = new Meta(texto);
-                metaViewModel.addMeta(meta);
-                edtMeta.setText(""); // Limpar o campo de entrada
-            }
-        });
+        // Botão para limpar metas
+        limparBtn.setOnClickListener(v -> metaViewModel.clearMetas());
 
-        limparBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                metaViewModel.clearMetas(); // Chama o método para limpar as metas
-            }
-        });
+        // Voltar para a tela anterior
+        btnVoltar.setOnClickListener(v -> finish());
 
-        btnVoltar.setOnClickListener(new View.OnClickListener() {
+        meditacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                Intent it = new Intent(AutocuidadoActivity.this,MeditacaoActivity.class);
+                startActivity(it);
             }
         });
 
+        cp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(AutocuidadoActivity.this,CPActivity.class);
+                startActivity(it);
+            }
+        });
     }
 }

@@ -194,7 +194,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Data de nascimento"
-        android:inputType="date"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.358"

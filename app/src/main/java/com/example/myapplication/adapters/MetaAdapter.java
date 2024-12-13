@@ -4,7 +4,6 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,22 +12,20 @@ import com.example.myapplication.R;
 import com.example.myapplication.models.Meta;
 import com.example.myapplication.viewholders.MetaViewHolder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MetaAdapter extends RecyclerView.Adapter<MetaViewHolder> {
-    private List<Meta> metas;
+    private final List<Meta> metas = new ArrayList<>();
     private final OnMetaClickListener onMetaClickListener;
 
-
-    public MetaAdapter(List<Meta> metas, OnMetaClickListener listener) {
-        this.metas = metas;
+    public MetaAdapter(OnMetaClickListener listener) {
         this.onMetaClickListener = listener;
     }
 
     @NonNull
     @Override
     public MetaViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflate o layout para o item do RecyclerView
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recycleitem2, parent, false);
         return new MetaViewHolder(view);
     }
@@ -39,26 +36,26 @@ public class MetaAdapter extends RecyclerView.Adapter<MetaViewHolder> {
         holder.checkBoxMeta.setText(meta.getTexto());
         holder.checkBoxMeta.setChecked(meta.isConcluida());
 
-        // Quando o CheckBox for marcado/desmarcado, atualiza o estado
+        // Atualiza a meta quando o estado do checkbox mudar
         holder.checkBoxMeta.setOnCheckedChangeListener((buttonView, isChecked) -> {
-            meta.setConcluida(isChecked);
-            onMetaClickListener.onMetaClick(meta, isChecked); // Atualiza o estado no ViewModel
+            if (buttonView.isPressed()) { // Apenas processa cliques manuais do usuário
+                onMetaClickListener.onMetaClick(meta, isChecked);
+            }
         });
     }
-
 
     @Override
     public int getItemCount() {
         return metas.size();
     }
 
+    // Atualizar lista com verificação
     @SuppressLint("NotifyDataSetChanged")
-    public void updateMetas(List<Meta> novasMetas) {
-        this.metas = novasMetas;
+    public void setMetas(List<Meta> novasMetas) {
+        metas.clear();
+        metas.addAll(novasMetas);
         notifyDataSetChanged();
     }
-
-
 
     public interface OnMetaClickListener {
         void onMetaClick(Meta meta, boolean isConcluded);
